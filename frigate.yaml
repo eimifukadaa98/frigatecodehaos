@@ -1,0 +1,86 @@
+mqtt:
+  host: core-mosquitto
+  user: 
+  password: 
+
+cameras:
+  hikvision:
+    ffmpeg:
+      inputs:
+        - path: rtsp://admin
+          roles:
+            - detect
+            - rtmp
+            - clips
+            - record
+            
+    record:
+        enabled: True
+        events:
+            retain:
+                default: 2
+    
+    objects:
+      track:
+        - person
+        - car
+        - truck
+        - bicycle
+        - motorcycle
+        - dog
+        - snake
+        - cat
+        - laptop
+        - cell phone
+        
+    snapshots:
+        enabled: True
+        timestamp: True
+        bounding_box: True
+        crop: False
+        required_zones: []
+        retain:
+            default: 2
+            
+  ANPR:
+    ffmpeg:
+      inputs:
+        - path: rtsp://admin
+          roles:
+            - detect
+            - rtmp
+            - clips
+            - record
+            
+    record:
+        enabled: True
+        events:
+            retain:
+                default: 2
+    
+    objects:
+      track:
+        - person
+        - car
+        - truck
+        - bicycle
+        - motorcycle
+        - dog
+        - snake
+        - cat
+        - laptop
+        - cell phone
+        
+    snapshots:
+        enabled: True
+        timestamp: True
+        bounding_box: True
+        crop: False
+        required_zones: []
+        retain:
+            default: 2
+            
+ 
+        
+    
+
